@@ -1,6 +1,12 @@
 <script lang="ts">
-    import Icon from "svelte-awesome"
-    import {faThumbsUp} from "@fortawesome/free-solid-svg-icons/faThumbsUp"
+    import Index from "./pages/index.svelte"
+    import Error from "./pages/error.svelte"
+
+    const currentRoute: string = document.location.pathname
 </script>
 
-<div>Hello World <Icon data={faThumbsUp} /></div>
+{#if currentRoute === "/"}
+    <Index />
+{:else}
+    <Error />
+{/if}
